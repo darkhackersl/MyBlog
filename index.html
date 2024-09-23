@@ -2,83 +2,127 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thenula MD - PUBLIC Website</title>
+    <title>Thenu MD</title>
+    <link rel="icon" href="https://i.ibb.co/hXY0bMN/THENU-MD-LOGO.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap');
+        @font-face {
+            font-family: 'Thunder';
+            src: url('thunder.woff2') format('woff2'),
+                 url('thunder.woff') format('woff');
+            /* You may need to adjust the paths to the "Inter" font files */
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            user-select: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
             margin: 0;
-            padding: 0;
-            color: #333;
-            background-color: #f4f4f4;
+            font-family: 'Thunder', Arial, sans-serif; /* Use the custom "Thunder" font here */
+            background: #101010;
+            overflow: hidden;
+            color: #FFFFFF; /* Text color */
         }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
+
+        .large-title {
+            font-size: 120px; /* Larger font size */
+            margin: 2rem;
+            opacity: 0; /* Start with zero opacity for the fade-in animation */
+            animation: fadeIn 2s ease forwards; /* Apply fade-in animation */
         }
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
+        .shadow__btn {
+        padding: 10px 20px;
+        border: none;
+        margin: .2rem;
+        font-size: 17px;
+        color: #000000;
+        border-radius: 7px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        transition: 0.5s;
+        transition-property: box-shadow;
+      }
+
+      .shadow__btn {
+        background: rgb(255, 255, 255);
+        box-shadow: 0 0 25px rgb(255, 255, 255);
+      }
+
+      .shadow__btn:hover {
+        box-shadow: 0 0 5px rgb(255, 255, 255),
+              0 0 25px rgb(255, 255, 255),
+              0 0 50px rgb(255, 255, 255),
+              0 0 100px rgb(255, 255, 255);
         }
-        nav ul li {
-            display: inline;
-            margin: 0 10px;
+        .dropdown {
+            display: none;
+            padding: 10px;
+            width: 400px;
+            border: 1px solid #ffffff;
+            background-color: #000000;
+            border-radius: 10px;
+            position: absolute;
+            top: 30px;
+            left: -180px;
+            z-index: 1;
         }
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
+        .button-container {
+          opacity: 0;
+          animation: fadeIn 2s ease 1s forwards; /* Apply fade-in animation */
         }
-        section {
-            padding: 20px;
-            max-width: 800px;
-            margin: auto;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        .seemore-container {
+            opacity: 0;
+            font-family: 'Montserrat',sans-serif;
+            font-size: small;
+            position:relative;
+            top: 10rem;
+            cursor: help;
+            animation: fadeInV2 2s ease 4s forwards; /* Apply fade-in animation */
+          }
+        .show-dropdown {
+            display: block;
         }
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+       @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
+       @keyframes fadeInV2 {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 0.3;
+            }
+        }
+        
     </style>
 </head>
 <body>
-    <header>
-        <h1>Thenula Panapiti</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Hello! My name is Thenula Panapiti. Welcome to my personal website. Here you can learn more about me and my work.</p>
-    </section>
-
-    <section id="projects">
-        <h2>Projects</h2>
-        <p>Here you can showcase some of your projects or achievements. Describe them in detail and provide links if possible.</p>
-    </section>
-
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>If you would like to get in touch with me, please email me at <a href="mailto:thenula@example.com">avanthiliyanage16@gmail.com.com</a>.</p>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Thenula Panapiti. All rights reserved.</p>
-    </footer>
+    <h1 class="large-title">ᴛʜᴇɴᴜ ᴍᴅ</h1>
+    <h2 style="font-family: 'Montserrat',sans-serif; font-weight: 150; opacity: 0; animation: fadeIn 3s ease 0.9s forwards;">Follow these steps.!</h2>
+    <div class="button-container">
+        <form action="https://github.com/darkhackersl/Thenu-MD/fork" method="post">
+        <input type="hidden" name="token" id="token" value="">
+        <button type="submit" class="shadow__btn">FORK</button>
+       
+         <button type="button" onclick="window.location.href='https://pair-web-public.koyeb.app/'" class="shadow__btn">Via Code</button>
+       <button type="button" onclick="window.location.href='https://app.jotform.com/242574628397470?utm_source=jotform_pwa'" class="shadow__btn">Via App</button>
+      </form>
+       
+    
+      </form>
+        </div>
+             </script>
+          </div>
+        <script src="js/object-fit-videos.js"></script>
 </body>
 </html>
